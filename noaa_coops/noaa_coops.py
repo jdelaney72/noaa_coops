@@ -4,7 +4,6 @@ from datetime import datetime, timedelta
 import pandas as pd
 import requests
 import zeep
-from pandas.io.json import json_normalize
 
 
 class Station:
@@ -401,7 +400,7 @@ class Station:
             else:
                 key = "data"
 
-            df = json_normalize(json_dict[key])  # Parse JSON dict to dataframe
+            df = pd.json_normalize(json_dict[key])  # Parse JSON dict to dataframe
 
             return df
 
@@ -418,7 +417,7 @@ class Station:
             else:
                 key = "data"
 
-            df = json_normalize(json_dict[key])  # Parse JSON dict to dataframe
+            df = pd.json_normalize(json_dict[key])  # Parse JSON dict to dataframe
 
             return df
 
